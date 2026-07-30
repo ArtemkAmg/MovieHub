@@ -80,7 +80,7 @@ const movies = [
         cast: ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz", "Frances Conroy"],
         description: "A mentally troubled comedian embarks on a downward spiral that leads to the creation of an iconic villain.",
         poster: "images/featured/joker.jpg",
-        backdrop: "images/featured/joker.jpg",
+        backdrop: "images/featured/joker_bg.jpg",
         trailerUrl: "https://www.youtube.com/embed/zAGVQLHvwOY"
     },
     {
