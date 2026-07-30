@@ -147,6 +147,10 @@
         background:#1a1a1a;
     }
 
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
+    }
+    
     .movies-grid{
         grid-template-columns:repeat(2, 1fr) !important;
         gap:12px;
@@ -357,6 +361,10 @@
         margin-bottom:3px;
     }
 
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
+    }
+
     .movies-grid{
         grid-template-columns:1fr !important;
         gap:14px;
@@ -455,5 +463,9 @@
 
     .movie-right h1{
         font-size:22px;
+    }
+
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
     }
 }

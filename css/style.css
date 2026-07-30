@@ -1272,7 +1272,7 @@ url("../images/hero/hero-bg.jpg");
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
-    filter:blur(6px) brightness(0.75);
+    filter:blur(2px) brightness(0.75);
     transform:scale(1.05);
     z-index:0;
     pointer-events:none;
