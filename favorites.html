@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieHub | Favorites</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">🎬 MovieHub</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li class="nav-mobile-only"><a href="favorites.html" class="active">❤ Favorites</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="favorites.html" class="favorite-btn" title="Favorites">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="trending" style="padding-top: 140px;">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>My Favorites</h2>
+                <span id="favoritesCount" style="color:#888; font-size:15px;"></span>
+            </div>
+
+            <div class="movies-grid" id="favoritesGrid"></div>
+
+            <div id="emptyFavorites" style="display:none; text-align:center; padding:100px 20px;">
+                <div style="font-size:64px; margin-bottom:20px;">🤍</div>
+                <h2 style="margin-bottom:15px;">No favorites yet</h2>
+                <p style="color:#888; margin-bottom:35px;">
+                    Add movies to your favorites by clicking the heart icon
+                </p>
+                <a href="movies.html" class="hero-btn">
+                    Browse Movies
+                </a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script src="js/header.js"></script>
+    <script src="js/data.js"></script>
+<script src="js/favorites.js"></script>
+</body>
+</html>

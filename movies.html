@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieHub | All Movies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">🎬 MovieHub</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html" class="active">Movies</a></li>
+                <li class="nav-mobile-only"><a href="favorites.html">❤ Favorites</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="favorites.html" class="favorite-btn" title="Favorites">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <button class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="trending" style="padding-top: 140px;">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>All Movies</h2>
+
+                <div class="section-actions">
+                    <span id="moviesCount" style="color:#888; font-size:15px;"></span>
+
+                    <button id="filterBtn" class="filter-btn">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+
+                    <div id="filterMenu" class="filter-menu">
+                        <div class="filter-menu-header">
+                            <h3>Filters</h3>
+                            <button type="button" class="filter-reset" id="filterReset">Reset</button>
+                        </div>
+
+                        <p class="filter-label">Genre</p>
+                        <div class="filter-chips">
+                            <button class="genre-filter active" data-genre="All">All</button>
+                            <button class="genre-filter" data-genre="Action">Action</button>
+                            <button class="genre-filter" data-genre="Adventure">Adventure</button>
+                            <button class="genre-filter" data-genre="Comedy">Comedy</button>
+                            <button class="genre-filter" data-genre="Crime">Crime</button>
+                            <button class="genre-filter" data-genre="Drama">Drama</button>
+                            <button class="genre-filter" data-genre="Horror">Horror</button>
+                            <button class="genre-filter" data-genre="Sci-Fi">Sci-Fi</button>
+                        </div>
+
+                        <hr>
+
+                        <p class="filter-label">Sort by</p>
+                        <div class="filter-sort-list">
+                            <button class="sort-filter" data-sort="rating">Rating</button>
+                            <button class="sort-filter" data-sort="year">Year</button>
+                            <button class="sort-filter" data-sort="title">A–Z</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movies-grid" id="moviesGrid"></div>
+
+            <div id="noResults" style="display:none; text-align:center; padding:80px 20px;">
+                <h2 style="margin-bottom:15px;">No movies found</h2>
+                <p style="color:#888;">Try another search or filter</p>
+            </div>
+
+            <div class="load-more-wrap" id="loadMoreWrap" style="display:none;">
+                <button type="button" class="load-more-btn" id="loadMoreBtn">
+                    Load more
+                </button>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<script src="js/header.js"></script>
+    <script src="js/data.js"></script>
+<script src="js/movies.js"></script>
+</body>
+</html>
