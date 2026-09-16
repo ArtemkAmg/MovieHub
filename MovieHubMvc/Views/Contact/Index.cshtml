@@ -1,0 +1,61 @@
+@model MovieHubMvc.Models.ContactViewModel
+@{
+    ViewData["Title"] = "Contact / Suggest a Movie";
+}
+
+<section class="trending" style="padding-top: 140px; min-height: 70vh;">
+    <div class="container" style="max-width: 640px;">
+
+        <div class="section-header" style="margin-bottom: 30px;">
+            <h2>Contact &amp; Suggestions</h2>
+        </div>
+
+        <p style="color:#bdbdbd; margin-bottom: 28px;">
+            Recommend a movie we should add, or send feedback. We’ll reply by email.
+        </p>
+
+        @if (TempData["Success"] != null)
+        {
+            <div style="background:#1a3a1a;border:1px solid #2d5a2d;color:#8fdf8f;padding:14px 18px;border-radius:12px;margin-bottom:24px;">
+                <i class="fa-solid fa-circle-check"></i> @TempData["Success"]
+            </div>
+        }
+
+        <form asp-action="Index" method="post" style="background:#1a1a1a;padding:28px;border-radius:16px;border:1px solid #2a2a2a;">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" style="color:#ff6b6b;margin-bottom:16px;"></div>
+
+            <div style="margin-bottom:18px;">
+                <label asp-for="Name" style="display:block;margin-bottom:6px;font-weight:500;"></label>
+                <input asp-for="Name" class="form-control" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;" placeholder="John Doe" />
+                <span asp-validation-for="Name" style="color:#ff6b6b;font-size:13px;"></span>
+            </div>
+
+            <div style="margin-bottom:18px;">
+                <label asp-for="Email" style="display:block;margin-bottom:6px;font-weight:500;"></label>
+                <input asp-for="Email" class="form-control" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;" placeholder="you@email.com" />
+                <span asp-validation-for="Email" style="color:#ff6b6b;font-size:13px;"></span>
+            </div>
+
+            <div style="margin-bottom:18px;">
+                <label asp-for="MovieTitle" style="display:block;margin-bottom:6px;font-weight:500;"></label>
+                <input asp-for="MovieTitle" class="form-control" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;" placeholder="e.g. Interstellar" />
+                <span asp-validation-for="MovieTitle" style="color:#ff6b6b;font-size:13px;"></span>
+            </div>
+
+            <div style="margin-bottom:22px;">
+                <label asp-for="Message" style="display:block;margin-bottom:6px;font-weight:500;"></label>
+                <textarea asp-for="Message" rows="5" class="form-control" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;resize:vertical;" placeholder="Why should we add this movie? Or any feedback..."></textarea>
+                <span asp-validation-for="Message" style="color:#ff6b6b;font-size:13px;"></span>
+            </div>
+
+            <button type="submit" class="hero-btn" style="border:none;cursor:pointer;width:100%;">
+                <i class="fa-solid fa-paper-plane"></i> Send message
+            </button>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

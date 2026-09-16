@@ -1,0 +1,119 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+@section Scripts {
+    <script src="~/js/main.js"></script>
+}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-tag">
+                🎬 NEW RELEASE
+            </span>
+
+            <h1>
+                Unlimited Movies,
+                <br>
+                Endless Entertainment.
+            </h1>
+
+            <p>
+                Discover thousands of blockbuster movies, award-winning TV shows,
+                and timeless classics. Stream your favorite entertainment anytime,
+                anywhere.
+            </p>
+
+            <div class="hero-info">
+                <div class="info-box">
+                    <h3>8.9</h3>
+                    <span>IMDb Rating</span>
+                </div>
+                <div class="info-box">
+                    <h3>5000+</h3>
+                    <span>Movies</span>
+                </div>
+                <div class="info-box">
+                    <h3>4K</h3>
+                    <span>Streaming</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a asp-controller="Movies" asp-action="Index" class="hero-btn">
+                    Explore Movies
+                </a>
+                <a href="#" class="secondary-btn">
+                    Watch Trailer
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recommended">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recommended Movies</h2>
+            <div class="slider-buttons">
+                <button id="prevSlide" type="button">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" type="button">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="recommended-wrapper">
+            <div class="recommended-slider" id="recommendedSlider">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="trending" id="trending">
+    <div class="container">
+        <div class="section-header">
+            <h2>Trending Movies</h2>
+            <div class="section-actions">
+                <a asp-controller="Movies" asp-action="Index">View All</a>
+                <button id="filterBtn" class="filter-btn" type="button">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <div id="filterMenu" class="filter-menu">
+                    <div class="filter-menu-header">
+                        <h3>Filters</h3>
+                        <button type="button" class="filter-reset" id="filterReset">Reset</button>
+                    </div>
+                    <p class="filter-label">Genre</p>
+                    <div class="filter-chips">
+                        <button class="genre-filter active" data-genre="All">All</button>
+                        <button class="genre-filter" data-genre="Action">Action</button>
+                        <button class="genre-filter" data-genre="Adventure">Adventure</button>
+                        <button class="genre-filter" data-genre="Comedy">Comedy</button>
+                        <button class="genre-filter" data-genre="Crime">Crime</button>
+                        <button class="genre-filter" data-genre="Drama">Drama</button>
+                        <button class="genre-filter" data-genre="Horror">Horror</button>
+                        <button class="genre-filter" data-genre="Sci-Fi">Sci-Fi</button>
+                    </div>
+                    <hr>
+                    <p class="filter-label">Sort by</p>
+                    <div class="filter-sort-list">
+                        <button class="sort-filter" data-sort="rating">Rating</button>
+                        <button class="sort-filter" data-sort="year">Year</button>
+                        <button class="sort-filter" data-sort="title">A–Z</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="movies-grid" id="trendingMovies">
+        </div>
+        <div class="load-more-wrap" id="loadMoreWrap" style="display:none;">
+            <button type="button" class="load-more-btn" id="loadMoreBtn">
+                Load more
+            </button>
+        </div>
+    </div>
+</section>

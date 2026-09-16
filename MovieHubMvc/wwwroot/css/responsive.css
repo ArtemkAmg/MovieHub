@@ -1,0 +1,471 @@
+@media (max-width: 992px){
+
+    .navbar{
+        height:72px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .nav-links{
+        margin-left:28px;
+        gap:22px;
+    }
+
+    .nav-links a{
+        font-size:15px;
+    }
+
+    .search-box input{
+        width:180px;
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .section-header h2{
+        font-size:32px;
+    }
+
+    .recommended-card{
+        min-width:180px;
+        height:270px;
+    }
+
+    .movie-content{
+        grid-template-columns:240px 1fr;
+        gap:36px;
+    }
+
+    .movie-right h1{
+        font-size:42px;
+    }
+
+    .movie-right{
+        padding:28px;
+    }
+
+    .movie-hero{
+        padding:120px 0 60px;
+        background-position:center top;
+    }
+}
+
+@media (max-width: 768px){
+
+    .navbar{
+        height:64px;
+        gap:10px;
+    }
+
+    .logo{
+        font-size:20px;
+        max-width:42%;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        order:1;
+    }
+
+    .menu-btn{
+        display:flex;
+    }
+
+    .nav-actions .favorite-btn{
+        display:none;
+    }
+
+    .nav-mobile-only{
+        display:list-item;
+    }
+
+    .search-box{
+        display:block !important;
+        position:static !important;
+        margin-left:auto;
+        margin-right:0;
+        padding:0 !important;
+        background:transparent !important;
+        border:none !important;
+        flex:1 1 auto;
+        max-width:160px;
+        min-width:0;
+        z-index:auto;
+        order:2;
+    }
+
+    .search-box.open{
+        display:block !important;
+    }
+
+    .search-box input{
+        width:100%;
+        padding:9px 12px;
+        font-size:13px;
+        border-radius:20px;
+    }
+
+    .nav-actions{
+        margin-left:8px;
+        gap:8px;
+        order:3;
+    }
+
+    .nav-links{
+        order:4;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:64px;
+        left:0;
+        right:0;
+        margin-left:0;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:#111;
+        border-bottom:1px solid #222;
+        padding:6px 0;
+        display:none;
+        z-index:999;
+        box-shadow:0 16px 40px rgba(0,0,0,.45);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links li a{
+        display:block;
+        padding:14px 6%;
+        font-size:16px;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active{
+        background:#1a1a1a;
+    }
+
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
+    }
+    
+    .movies-grid{
+        grid-template-columns:repeat(2, 1fr) !important;
+        gap:12px;
+    }
+
+    .movie-card{
+        border-radius:12px;
+        aspect-ratio:2 / 3;
+        max-height:260px;
+    }
+
+    .movie-overlay{
+        padding:12px;
+    }
+
+    .movie-title h3,
+    .movie-overlay h3{
+        font-size:14px;
+        margin-bottom:4px;
+    }
+
+    .movie-overlay .movie-title span,
+    .movie-bottom{
+        font-size:12px;
+    }
+
+    .movie-card .favorite-btn{
+        width:34px;
+        height:34px;
+        top:8px;
+        right:8px;
+        font-size:14px;
+    }
+
+    .section-header{
+        flex-wrap:wrap;
+        gap:14px;
+        margin-bottom:28px;
+    }
+
+    .section-header h2{
+        font-size:26px;
+    }
+
+    .trending{
+        padding:60px 0;
+    }
+
+    .recommended{
+        padding:50px 0;
+    }
+
+    .recommended-card{
+        min-width:140px;
+        height:210px;
+    }
+
+    .recommended-overlay h3{
+        font-size:15px;
+    }
+
+    .slider-buttons button{
+        width:36px;
+        height:36px;
+        font-size:14px;
+    }
+
+    .movie-content{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+
+    .movie-left{
+        max-width:200px;
+        margin:0 auto;
+    }
+
+    .movie-poster{
+        border-radius:14px;
+    }
+
+    .movie-right{
+        padding:20px;
+        border-radius:16px;
+    }
+
+    .movie-right h1{
+        font-size:28px;
+        line-height:1.15;
+    }
+
+    .movie-meta{
+        gap:8px;
+    }
+
+    .movie-meta span{
+        padding:7px 11px;
+        font-size:12px;
+    }
+
+    .movie-buttons{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .movie-hero{
+        padding:90px 0 40px;
+        min-height:auto;
+        background-size:cover;
+        background-position:center center;
+    }
+
+    .movie-hero::before{
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.75) 0%,
+                rgba(0,0,0,.55) 40%,
+                rgba(15,15,15,.92) 100%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.65) 0%,
+                rgba(0,0,0,.35) 50%,
+                rgba(0,0,0,.65) 100%
+            );
+    }
+
+    .filter-menu{
+        width:min(300px, calc(100vw - 32px));
+    }
+
+    .load-more-btn{
+        width:100%;
+        max-width:260px;
+        padding:13px 20px;
+    }
+}
+
+@media (max-width: 576px){
+
+    .container{
+        width:92%;
+    }
+
+    .navbar{
+        height:58px;
+        gap:8px;
+    }
+
+    .logo{
+        font-size:17px;
+        max-width:36%;
+    }
+
+    .nav-links{
+        top:58px;
+    }
+
+    .search-box{
+        max-width:130px;
+    }
+
+    .search-box input{
+        padding:8px 10px;
+        font-size:12px;
+    }
+
+    .favorite-btn,
+    .menu-btn{
+        width:38px;
+        height:38px;
+        font-size:17px;
+    }
+
+    .section-header h2{
+        font-size:22px;
+    }
+
+    .section-header a{
+        font-size:13px;
+    }
+
+    .trending{
+        padding:44px 0;
+    }
+
+    .recommended{
+        padding:36px 0 24px;
+    }
+
+    .recommended-slider{
+        gap:12px;
+    }
+
+    .recommended-card{
+        min-width:120px;
+        height:180px;
+        border-radius:12px;
+    }
+
+    .recommended-overlay{
+        padding:12px;
+    }
+
+    .recommended-overlay h3{
+        font-size:13px;
+        margin-bottom:3px;
+    }
+
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
+    }
+
+    .movies-grid{
+        grid-template-columns:1fr !important;
+        gap:14px;
+        max-width:280px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .movie-card{
+        max-height:none;
+        width:100%;
+        border-radius:14px;
+        aspect-ratio:2 / 3;
+    }
+
+    .movie-overlay{
+        padding:14px;
+    }
+
+    .movie-title h3,
+    .movie-overlay h3{
+        font-size:16px;
+    }
+
+    .movie-overlay .movie-title span,
+    .movie-bottom{
+        font-size:13px;
+    }
+
+    .movie-card .favorite-btn{
+        width:36px;
+        height:36px;
+        top:10px;
+        right:10px;
+        font-size:15px;
+    }
+
+    .movie-left{
+        max-width:170px;
+    }
+
+    .movie-right{
+        padding:16px;
+    }
+
+    .movie-right h1{
+        font-size:24px;
+    }
+
+    .movie-description{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .movie-category{
+        font-size:12px;
+        padding:6px 12px;
+    }
+
+    .filter-btn{
+        width:36px;
+        height:36px;
+        font-size:14px;
+    }
+
+    .load-more-wrap{
+        margin-top:28px;
+    }
+}
+
+@media (max-width: 400px){
+
+    .logo{
+        font-size:15px;
+        max-width:32%;
+    }
+
+    .search-box{
+        max-width:110px;
+    }
+
+    .section-header h2{
+        font-size:20px;
+    }
+
+    .movies-grid{
+        max-width:240px;
+        gap:12px;
+        grid-template-columns:1fr !important;
+    }
+
+    .recommended-card{
+        min-width:110px;
+        height:165px;
+    }
+
+    .movie-right h1{
+        font-size:22px;
+    }
+
+    .movie-hero-bg{
+    filter:blur(6px) brightness(0.75);
+    }
+}

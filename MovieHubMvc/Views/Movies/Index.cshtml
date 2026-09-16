@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "All Movies";
+}
+
+@section Scripts {
+    <script src="~/js/movies.js"></script>
+}
+
+<section class="trending" style="padding-top: 140px;">
+    <div class="container">
+        <div class="section-header">
+            <h2>All Movies</h2>
+            <div class="section-actions">
+                <span id="moviesCount" style="color:#888; font-size:15px;"></span>
+                <button id="filterBtn" class="filter-btn" type="button">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+                <div id="filterMenu" class="filter-menu">
+                    <div class="filter-menu-header">
+                        <h3>Filters</h3>
+                        <button type="button" class="filter-reset" id="filterReset">Reset</button>
+                    </div>
+                    <p class="filter-label">Genre</p>
+                    <div class="filter-chips">
+                        <button class="genre-filter active" data-genre="All">All</button>
+                        <button class="genre-filter" data-genre="Action">Action</button>
+                        <button class="genre-filter" data-genre="Adventure">Adventure</button>
+                        <button class="genre-filter" data-genre="Comedy">Comedy</button>
+                        <button class="genre-filter" data-genre="Crime">Crime</button>
+                        <button class="genre-filter" data-genre="Drama">Drama</button>
+                        <button class="genre-filter" data-genre="Horror">Horror</button>
+                        <button class="genre-filter" data-genre="Sci-Fi">Sci-Fi</button>
+                    </div>
+                    <hr>
+                    <p class="filter-label">Sort by</p>
+                    <div class="filter-sort-list">
+                        <button class="sort-filter" data-sort="rating">Rating</button>
+                        <button class="sort-filter" data-sort="year">Year</button>
+                        <button class="sort-filter" data-sort="title">A–Z</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="movies-grid" id="moviesGrid"></div>
+        <div id="noResults" style="display:none; text-align:center; padding:80px 20px;">
+            <h2 style="margin-bottom:15px;">No movies found</h2>
+            <p style="color:#888;">Try another search or filter</p>
+        </div>
+        <div class="load-more-wrap" id="loadMoreWrap" style="display:none;">
+            <button type="button" class="load-more-btn" id="loadMoreBtn">
+                Load more
+            </button>
+        </div>
+    </div>
+</section>

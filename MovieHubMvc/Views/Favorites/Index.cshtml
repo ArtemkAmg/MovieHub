@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Favorites";
+}
+
+@section Scripts {
+    <script src="~/js/favorites.js"></script>
+}
+
+<section class="trending" style="padding-top: 140px;">
+    <div class="container">
+        <div class="section-header">
+            <h2>My Favorites</h2>
+            <span id="favoritesCount" style="color:#888; font-size:15px;"></span>
+        </div>
+        <div class="movies-grid" id="favoritesGrid"></div>
+        <div id="emptyFavorites" style="display:none; text-align:center; padding:100px 20px;">
+            <div style="font-size:64px; margin-bottom:20px;">🤍</div>
+            <h2 style="margin-bottom:15px;">No favorites yet</h2>
+            <p style="color:#888; margin-bottom:35px;">
+                Add movies to your favorites by clicking the heart icon
+            </p>
+            <a asp-controller="Movies" asp-action="Index" class="hero-btn">
+                Browse Movies
+            </a>
+        </div>
+    </div>
+</section>
