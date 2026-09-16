@@ -77,12 +77,12 @@ public class ContactController : Controller
             TempData["Success"] = "Message sent! Check your inbox for a confirmation.";
             return RedirectToAction(nameof(Index));
         }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Failed to send contact email");
-            ModelState.AddModelError(string.Empty,
-                "Could not send email. Check EmailSettings in appsettings.json (Gmail App Password etc.).");
-            return View(model);
-        }
+       catch (Exception ex)
+{
+    _logger.LogError(ex, "Failed to send contact email");
+    var detail = ex.InnerException?.Message ?? ex.Message;
+    ModelState.AddModelError(string.Empty, $"Could not send email: {detail}");
+    return View(model);
+}
     }
 }
