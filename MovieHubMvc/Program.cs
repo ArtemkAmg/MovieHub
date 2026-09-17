@@ -1,6 +1,17 @@
+using MovieHubMvc.Middleware;
 using MovieHubMvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// ===== File logging configuration (assignment: logs in Logs/ folder) =====
+// Built-in logger + write to daily files under ContentRoot/Logs
+var logsPath = Path.Combine(builder.Environment.ContentRootPath, "Logs");
+Directory.CreateDirectory(logsPath);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddProvider(new MovieHubMvc.Logging.FileLoggerProvider(
+    Path.Combine(logsPath, "app-{date}.log")));
 
 builder.Services.AddControllersWithViews();
 
@@ -8,24 +19,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings"));
 
-// ===== DI lifetime explanation (assignment requirement) =====
-//
-// Transient  – новий екземпляр КОЖНОГО разу при запиті сервісу.
-//              Підходить для легких, без стану об’єктів.
-//
-// Scoped     – один екземпляр на HTTP-запит (scope).
-//              Рекомендовано для сервісів, що працюють з БД / HTTP-контекстом.
-//              EmailSender реєструємо як Scoped — один раз на submit форми.
-//
-// Singleton  – один екземпляр на весь час життя додатку.
-//              Небезпечно, якщо сервіс тримає стан або не thread-safe.
-//
-// Обираємо Scoped для IEmailSender:
+// Scoped — один екземпляр на HTTP-запит
 builder.Services.AddScoped<IEmailSender, EmailSender>();
-
-// Альтернативи (закоментовано для демонстрації):
-// builder.Services.AddTransient<IEmailSender, EmailSender>();
-// builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
@@ -37,6 +32,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// Log every request: full URL + time + IP  →  Logs/requests-yyyy-MM-dd.log
+app.UseRequestLogging();
+
 app.UseRouting();
 app.UseAuthorization();
 
